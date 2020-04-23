@@ -46,9 +46,6 @@ class Autoload extends BaseCommand
             'http-server/src/Router/DispatcherFactory.php' => [
                 'config/routes.php' => 'routes/route.php',
             ],
-            'session/src/SessionManager.php' => [
-                'HYPERF_SESSION_ID' => 'SESSION_ID',
-            ],
         ];
 
         foreach ($rules as $file => $rule) {
