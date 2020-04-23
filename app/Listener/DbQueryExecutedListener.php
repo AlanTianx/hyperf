@@ -14,7 +14,9 @@ use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
 
 /**
+ * Class DbQueryExecutedListener
  * @Listener
+ * @package App\Listener
  */
 class DbQueryExecutedListener implements ListenerInterface
 {

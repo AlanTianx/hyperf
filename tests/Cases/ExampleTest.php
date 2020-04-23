@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Test\Cases;
+namespace Tests\Cases;
 
-use Test\HttpTestCase;
+use Tests\HttpTestCase;
 
 /**
  * @internal

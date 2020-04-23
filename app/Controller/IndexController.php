@@ -4,16 +4,20 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+/**
+ * Class IndexController
+ * @package App\Controller
+ */
 class IndexController extends AbstractController
 {
-    public function index()
+    /**
+     * @param string|null $path
+     * @return mixed
+     */
+    public function view(string $path = null)
     {
-        $user = $this->request->input('user', 'World');
-        $method = $this->request->getMethod();
-
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}.",
-        ];
+        return $this->render('welcome', [
+            'path' => $path
+        ]);
     }
 }

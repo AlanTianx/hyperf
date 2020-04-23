@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Test;
+namespace Tests;
 
 use Hyperf\Testing\Client;
 use PHPUnit\Framework\TestCase;
