@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Module\Address\Model;
+namespace App\Service\Address\Model;
 
 use App\Model\Model;
 
 /**
  * Class Address
- * @package App\Module\Address\Model
+ * @package App\Service\Address\Model
  */
 class Address extends Model
 {

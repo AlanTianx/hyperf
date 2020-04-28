@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Module\User\Model;
+namespace App\Service\User\Model;
 
 use App\Model\Model;
 
 /**
  * Class User
- * @package App\Module\User\Model
+ * @package App\Service\User\Model
  */
 class User extends Model
 {

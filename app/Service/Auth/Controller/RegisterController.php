@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Module\Auth\Controller;
+namespace App\Service\Auth\Controller;
 
 use App\Controller\AbstractController;
 use Hyperf\HttpServer\Annotation\Controller;
@@ -12,7 +12,7 @@ use Hyperf\HttpServer\Annotation\PostMapping;
 /**
  * @Controller
  * Class RegisterController
- * @package App\Module\Auth\Controller
+ * @package App\Service\Auth\Controller
  */
 class RegisterController extends AbstractController
 {

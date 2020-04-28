@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Module\Proxy;
+namespace App\Service\Proxy;
 
 use Hyperf\Guzzle\ClientFactory;
 
 /**
  * Class ShippingProxy
- * @package App\Module\Proxy
+ * @package App\Service\Proxy
  */
 class ShippingProxy
 {

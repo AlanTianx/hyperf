@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace App\Module\Address\Service;
+namespace App\Service\Address\Service;
 
-use App\Module\Address\Model\Address;
+use App\Service\Address\Model\Address;
 use Hyperf\Database\Model\Builder;
 use Hyperf\Database\Model\Collection;
 use Hyperf\Database\Model\Model;
 
 /**
  * Class AddressService
- * @package App\Module\Address\Service
+ * @package App\Service\Address\Service
  */
 class AddressService
 {
