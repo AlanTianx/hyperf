@@ -23,5 +23,4 @@ class UserService
     {
         $this->user = $user;
     }
-
 }
