@@ -20,6 +20,7 @@ RUN set -ex \
     && wget https://mirrors.aliyun.com/composer/composer.phar \
     && chmod u+x composer.phar \
     && mv composer.phar /usr/local/bin/composer \
+    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ \
     # show php version and extensions
     && php -v \
     && php -m \
