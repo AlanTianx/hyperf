@@ -2,15 +2,17 @@
 
 这是一个基于 [Hyperf](https://hyperf.io) 框架的应用脚手架程序。
 
-# 必要环境
+# 服务器要求
+
+Hyperf 对系统环境有一些要求，仅可运行于 Linux 和 Mac 环境下。当您不想采用 Docker 来作为运行的环境基础时，您需要确保您的运行环境达到了以下的要求：   
 
  - PHP >= 7.2
- - Swoole PHP extension >= 4.4，and Disabled `Short Name`
- - OpenSSL PHP extension
- - JSON PHP extension
- - PDO PHP extension （If you need to use MySQL Client）
- - Redis PHP extension （If you need to use Redis Client）
- - Protobuf PHP extension （If you need to use gRPC Server of Client）
+ - Swoole PHP 扩展 >= 4.4，并关闭了 `Short Name`
+ - OpenSSL PHP 扩展
+ - JSON PHP 扩展
+ - PDO PHP 扩展 （如需要使用到 MySQL 客户端）
+ - Redis PHP 扩展 （如需要使用到 Redis 客户端）
+ - Protobuf PHP 扩展 （如需要使用到 gRPC 服务端或客户端）
 
 # Composer 安装
 
@@ -167,3 +169,63 @@ server {
     }
 }
 ```
+
+# Docker 下开发
+
+假设您的本机环境并不能达到 Hyperf 的环境要求，或对于环境配置不是那么熟悉，那么您可以通过以下方法来运行及开发 Hyperf 项目：
+
+```bash
+# 下载并运行 hyperf/hyperf 镜像，并将镜像内的项目目录绑定到宿主机的 /tmp/skeleton 目录
+docker run -v /tmp/hyperf:/hyperf -p 9501:9501 -it --entrypoint /bin/sh hyperf/hyperf:7.2-alpine-v3.9-cli
+
+# 镜像容器运行后，在容器内安装 Composer
+wget https://mirrors.aliyun.com/composer/composer.phar
+chmod u+x composer.phar
+mv composer.phar /usr/local/bin/composer
+# 将 Composer 镜像设置为阿里云镜像，加速国内下载速度
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer
+
+# 通过 Composer 安装 daosoft/hyperf 项目
+composer create-project daosoft/hyperf
+
+# 进入安装好的 Hyperf 项目目录
+cd hyperf
+# 启动 Hyperf
+php artisan start
+```
+
+接下来，就可以在 `/tmp/skeleton` 中看到您安装好的代码了。由于 Hyperf 是持久化的 CLI 框架，当您修改完您的代码后，通过 `CTRL + C` 终止当前启动的进程实例，并重新执行 `php artisan start` 启动命令即可。
+
+# 常见问题
+
+## Swoole 短名未关闭
+
+```bash
+[ERROR] Swoole short name have to disable before start server, please set swoole.use_shortname = 'Off' into your php.ini.
+```
+
+您需要在您的 php.ini 配置文件增加 `swoole.use_shortname = 'Off'` 配置项
+
+```bash
+# echo 'swoole.use_shortname = "Off"' >> /etc/php.ini
+swoole.use_shortname = 'Off'
+```
+
+> 注意该配置必须于 php.ini 内配置，无法通过 ini_set() 函数来重写
+
+当然，也可以通过以下的命令来启动服务，在执行 PHP 命令时关闭掉 Swoole 短名功能
+
+```bash
+php -d swoole.use_shortname=Off bin/hyperf.php start
+```
+
+## 存在兼容性问题的扩展
+
+由于 Hyperf 基于 Swoole 协程实现，而 Swoole 4 带来的协程功能是 PHP 前所未有的，所以与不少扩展都仍存在兼容性的问题。   
+以下扩展（包括但不限于）都会造成一定的兼容性问题，不能与之共用或共存：
+
+- xhprof
+- xdebug
+- blackfire
+- trace
+- uopz

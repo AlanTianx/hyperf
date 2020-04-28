@@ -1,4 +1,5 @@
 # Default Dockerfile
+# exp：docker build -t daosoft:hyperf .
 
 FROM hyperf/hyperf:7.2-alpine-v3.9-cli
 LABEL maintainer="David Taylor <2797712@qq.com>" version="1.0" license="MIT"
