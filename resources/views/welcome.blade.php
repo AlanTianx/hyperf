@@ -6,6 +6,6 @@
     <title>Welcome</title>
 </head>
 <body>
-welcome page
+{{ $message }}
 </body>
 </html>

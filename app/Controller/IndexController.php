@@ -17,6 +17,7 @@ class IndexController extends AbstractController
     public function view(string $path = null)
     {
         return $this->render('welcome', [
+            'message' => trans('messages.welcome'),
             'path' => $path
         ]);
     }
