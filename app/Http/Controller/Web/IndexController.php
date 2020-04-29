@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Http\Controller\Web;
 
+use App\Http\Controller\AbstractController;
 use Hyperf\Contract\TranslatorInterface;
 use Hyperf\Di\Annotation\Inject;
 
 /**
  * Class IndexController
- * @package App\Controller
+ * @package App\Http\Controller\Web
  */
 class IndexController extends AbstractController
 {

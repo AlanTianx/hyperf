@@ -2,38 +2,38 @@
 
 declare(strict_types=1);
 
-namespace App\Service\Auth\Controller;
+namespace App\Http\Controller\Auth;
 
-use App\Controller\AbstractController;
+use App\Http\Controller\AbstractController;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\GetMapping;
 use Hyperf\HttpServer\Annotation\PostMapping;
 
 /**
  * @Controller
- * Class LoginController
- * @package App\Service\Auth\Controller
+ * Class RegisterController
+ * @package App\Http\Controller\Auth
  */
-class LoginController extends AbstractController
+class RegisterController extends AbstractController
 {
     /**
-     * @GetMapping("/login")
+     * @GetMapping("/register")
      * @return mixed
      */
     public function index()
     {
-        return $this->render('auth.login');
+        return $this->render('auth.register');
     }
 
     /**
-     * @PostMapping("/login")
+     * @PostMapping("/register")
      * @return array
      */
     public function handle()
     {
         return [
             'method' => 'handle',
-            'message' => 'Login',
+            'message' => 'Register',
         ];
     }
 }

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace App\Api\Controller;
+namespace App\Http\Controller\Api;
 
-use App\Controller\AbstractController;
+use App\Http\Controller\AbstractController;
 use Hyperf\HttpServer\Annotation\AutoController;
 use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 
 /**
  * @AutoController(prefix="api/home")
  * Class HomeController
- * @package App\Api\Controller
+ * @package App\Http\Controller\Api
  */
 class HomeController extends AbstractController
 {
