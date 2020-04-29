@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Service\User\Service;
+namespace App\Service\User;
 
 use App\Service\User\Model\User;
 
 /**
  * Class UserService
- * @package App\Service\User\Service
+ * @package App\Service\User
  */
 class UserService
 {
