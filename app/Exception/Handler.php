@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Exception\Handler;
+namespace App\Exception;
 
 use Hyperf\Contract\StdoutLoggerInterface;
 use Hyperf\ExceptionHandler\ExceptionHandler;
@@ -11,10 +11,10 @@ use Psr\Http\Message\ResponseInterface;
 use Throwable;
 
 /**
- * Class AppExceptionHandler
- * @package App\Exception\Handler
+ * Class Handler
+ * @package App\Exception
  */
-class AppExceptionHandler extends ExceptionHandler
+class Handler extends ExceptionHandler
 {
     /**
      * @var StdoutLoggerInterface

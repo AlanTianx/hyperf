@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Api\Transformer;
+namespace App\Api;
 
 /**
  * Class Transformer
- * @package App\Api\Transformer
+ * @package App\Api
  */
 abstract class Transformer
 {
