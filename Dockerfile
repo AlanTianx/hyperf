@@ -1,12 +1,8 @@
 # Default Dockerfile
-#
-# @link     https://www.hyperf.io
-# @document https://doc.hyperf.io
-# @contact  group@hyperf.io
-# @license  https://github.com/hyperf-cloud/hyperf/blob/master/LICENSE
+# exp：docker build -t daosoft:hyperf .
 
 FROM hyperf/hyperf:7.2-alpine-v3.9-cli
-LABEL maintainer="Hyperf Developers <group@hyperf.io>" version="1.0" license="MIT"
+LABEL maintainer="David Taylor <2797712@qq.com>" version="1.0" license="MIT"
 
 ##
 # ---------- env settings ----------
@@ -15,7 +11,6 @@ LABEL maintainer="Hyperf Developers <group@hyperf.io>" version="1.0" license="MI
 ARG timezone
 
 ENV TIMEZONE=${timezone:-"Asia/Shanghai"} \
-    COMPOSER_VERSION=1.9.1 \
     APP_ENV=prod
 
 # update
@@ -23,9 +18,10 @@ RUN set -ex \
     && apk update \
     # install composer
     && cd /tmp \
-    && wget https://github.com/composer/composer/releases/download/${COMPOSER_VERSION}/composer.phar \
+    && wget https://mirrors.aliyun.com/composer/composer.phar \
     && chmod u+x composer.phar \
     && mv composer.phar /usr/local/bin/composer \
+    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ \
     # show php version and extensions
     && php -v \
     && php -m \
@@ -56,4 +52,4 @@ RUN composer install --no-dev -o
 
 EXPOSE 9501
 
-ENTRYPOINT ["php", "/opt/www/bin/hyperf.php", "start"]
+ENTRYPOINT ["php", "/opt/www/artisan", "start"]
