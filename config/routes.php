@@ -10,10 +10,6 @@ declare(strict_types=1);
  * @license  https://github.com/hyperf-cloud/hyperf/blob/master/LICENSE
  */
 
-return [
-    'handler' => [
-        'http' => [
-            App\Exception\Handler\AppExceptionHandler::class,
-        ],
-    ],
-];
+use Hyperf\HttpServer\Router\Router;
+
+Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
