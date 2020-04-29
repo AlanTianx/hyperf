@@ -51,22 +51,25 @@ abstract class AbstractController
     /**
      * @var int
      */
-    private $errorCode = 1;
+    protected $statusCode = 1;
 
     /**
      * @return int
      */
-    public function getErrorCode(): int
+    protected function getStatusCode(): int
     {
-        return $this->errorCode;
+        return $this->statusCode;
     }
 
     /**
-     * @param int $errorCode
+     * @param int $statusCode
+     * @return $this
      */
-    public function setErrorCode(int $errorCode): void
+    protected function setStatusCode(int $statusCode)
     {
-        $this->errorCode = $errorCode;
+        $this->statusCode = $statusCode;
+
+        return $this;
     }
 
     /**
@@ -101,7 +104,7 @@ abstract class AbstractController
         return $this->response([
             'status' => 'failed',
             'errors' => [
-                'code' => $this->getErrorCode(),
+                'code' => $this->getStatusCode(),
                 'message' => $message,
             ],
             'time' => time(),
