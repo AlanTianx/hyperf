@@ -1,16 +1,19 @@
 {
-    "name": "daosoft/hyperf",
+    "name": "daosoft/framework",
     "type": "project",
+    "description": "A coroutine framework that focuses on hyperspeed and flexible.",
     "keywords": [
         "php",
         "swoole",
         "framework",
         "hyperf",
-        "microservice",
-        "middleware"
+        "daosoft"
     ],
-    "description": "A coroutine framework that focuses on hyperspeed and flexible, specifically use for build microservices and middlewares.",
-    "license": "Apache-2.0",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/daosoft/framework/issues?state=open",
+        "source": "https://github.com/daosoft/framework"
+    },
     "require": {
         "php": ">=7.2",
         "ext-swoole": ">=4.4",
@@ -76,7 +79,7 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "extra": [],
     "scripts": {
