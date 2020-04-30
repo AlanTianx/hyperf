@@ -43,6 +43,9 @@ class Autoload extends BaseCommand
             'database/src/Commands/Seeders/BaseCommand.php' => [
                 '\'seeders\'' => '\'database/seeders\'',
             ],
+            'di/bin/init-proxy.sh' => [
+                'bin/hyperf.php' => 'artisan',
+            ],
             'http-server/src/Router/DispatcherFactory.php' => [
                 'config/routes.php' => 'routes/route.php',
             ],

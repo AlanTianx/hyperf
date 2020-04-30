@@ -37,6 +37,7 @@
         "overtrue/easy-sms": "^1.1",
         "overtrue/pinyin": "^4.0",
         "overtrue/wechat": "^4.2",
+        "symfony/event-dispatcher": "^4.3",
         "yurunsoft/pay-sdk": "^3.0",
         "yurunsoft/yurun-oauth-login": "^3.0"
     },
@@ -83,7 +84,8 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-autoload-dump": [
-            "@php artisan app:autoload"
+            "@php artisan app:autoload",
+            "init-proxy.sh"
         ],
         "cs-fix": "php-cs-fixer fix $1",
         "test": "co-phpunit -c phpunit.xml --colors=always"
