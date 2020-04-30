@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Service\User;
 
-use App\Service\User\Model\User;
+use App\Service\User\User;
 
 /**
  * Class UserService

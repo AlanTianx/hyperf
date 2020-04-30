@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Service\Address;
 
-use App\Service\Address\Model\Address;
+use App\Service\Address\Address;
 use Hyperf\Database\Model\Builder;
 use Hyperf\Database\Model\Collection;
 use Hyperf\Database\Model\Model;
