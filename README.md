@@ -17,7 +17,7 @@ Hyperf 对系统环境有一些要求，仅可运行于 Linux 和 Mac 环境下�
 # Composer 安装
 
 ```bash
-composer create-project daosoft/framework
+composer create-project daosoft/scaffold
 ```
 
 # Supervisor 部署
