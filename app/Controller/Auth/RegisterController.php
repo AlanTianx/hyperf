@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controller\Auth;
+namespace App\Controller\Auth;
 
-use App\Http\Controller\AbstractController;
+use App\Controller\AbstractController;
 use Hyperf\HttpServer\Annotation\Controller;
 use Hyperf\HttpServer\Annotation\GetMapping;
 use Hyperf\HttpServer\Annotation\PostMapping;
@@ -12,7 +12,7 @@ use Hyperf\HttpServer\Annotation\PostMapping;
 /**
  * @Controller
  * Class RegisterController
- * @package App\Http\Controller\Auth
+ * @package App\Controller\Auth
  */
 class RegisterController extends AbstractController
 {

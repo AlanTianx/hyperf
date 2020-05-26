@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controller\Console;
+namespace App\Controller\Console;
 
-use App\Http\Controller\AbstractController;
+use App\Controller\AbstractController;
 use Hyperf\Contract\TranslatorInterface;
 use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Annotation\Controller;
@@ -13,7 +13,7 @@ use Hyperf\HttpServer\Annotation\GetMapping;
 /**
  * @Controller
  * Class IndexController
- * @package App\Http\Controller\Console
+ * @package App\Controller\Console
  */
 class IndexController extends AbstractController
 {

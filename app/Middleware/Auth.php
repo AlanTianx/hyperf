@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Middleware;
+namespace App\Middleware;
 
 use Hyperf\HttpServer\Contract\RequestInterface as HttpRequest;
 use Hyperf\HttpServer\Contract\ResponseInterface as HttpResponse;
@@ -14,7 +14,7 @@ use Psr\Http\Server\RequestHandlerInterface;
 
 /**
  * Class Auth
- * @package App\Http\Middleware
+ * @package App\Middleware
  */
 class Auth implements MiddlewareInterface
 {

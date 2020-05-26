@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controller;
+namespace App\Controller;
 
 use Hyperf\Contract\SessionInterface;
 use Hyperf\Di\Annotation\Inject;
@@ -14,7 +14,7 @@ use Psr\Http\Message\ResponseInterface as PsrResponseInterface;
 
 /**
  * Class AbstractController
- * @package App\Http\Controller
+ * @package App\Controller
  */
 abstract class AbstractController
 {
