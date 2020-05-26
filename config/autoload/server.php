@@ -30,7 +30,6 @@ return [
         'socket_buffer_size' => 2 * 1024 * 1024,
         'buffer_output_size' => 2 * 1024 * 1024,
         'document_root' => BASE_PATH . '/public',
-        'static_handler_locations' => ['/'],
         'enable_static_handler' => true,
         'task_worker_num' => swoole_cpu_num(),
         'task_enable_coroutine' => false,

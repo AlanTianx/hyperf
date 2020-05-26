@@ -16,7 +16,7 @@
     },
     "require": {
         "php": ">=7.2",
-        "ext-swoole": ">=4.4",
+        "ext-swoole": ">=4.5",
         "duncan3dc/blade": "^4.8",
         "hyperf/cache": "~1.1.0",
         "hyperf/command": "~1.1.0",
