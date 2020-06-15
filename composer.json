@@ -1,5 +1,5 @@
 {
-    "name": "daosoft/scaffold",
+    "name": "daosoft/hyperf",
     "type": "project",
     "description": "A coroutine framework that focuses on hyperspeed and flexible.",
     "keywords": [
@@ -11,8 +11,8 @@
     ],
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/daosoft/scaffold/issues?state=open",
-        "source": "https://github.com/daosoft/scaffold"
+        "issues": "https://github.com/daosoft/hyperf/issues?state=open",
+        "source": "https://github.com/daosoft/hyperf"
     },
     "require": {
         "php": ">=7.2",
